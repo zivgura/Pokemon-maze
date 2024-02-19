@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="300.0" prefWidth="400.0" stylesheets="@pokemon2.css" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+   <children>
+      <BorderPane prefHeight="300.0" prefWidth="400.0">
+         <top>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Properties" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="5.0" />
+               </BorderPane.margin></Text>
+         </top>
+         <left>
+            <GridPane prefHeight="300.0" prefWidth="400.0">
+              <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="179.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" maxWidth="200.0" minWidth="10.0" prefWidth="200.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-white" text="Details on the game:" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Maze generator type:" GridPane.rowIndex="1" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Searching algorithm type:" GridPane.rowIndex="2" />
+                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thread pool size:" GridPane.rowIndex="3" />
+                  <ComboBox fx:id="mazeGenerator_choiceBox" prefWidth="200.0" promptText="MyMazeGenerator" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="MyMazeGenerator" />
+                           <String fx:value="SimpleMazeGenerator" />
+                           <String fx:value="EmptyMazeGenerator" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="searchAlgorithm_choiceBox" prefWidth="200.0" promptText="BestFirstSearch" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="BestFirstSearch" />
+                           <String fx:value="BFS" />
+                           <String fx:value="DFS" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+                  <ComboBox fx:id="threadPool_choiceBox" prefWidth="200.0" promptText="2" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <items>
+                        <FXCollections fx:factory="observableArrayList">
+                           <String fx:value="2" />
+                           <String fx:value="3" />
+                           <String fx:value="4" />
+                        </FXCollections>
+                     </items>
+                  </ComboBox>
+
+               </children>
+               <BorderPane.margin>
+                  <Insets left="10.0" right="10.0" />
+               </BorderPane.margin>
+            </GridPane>
+         </left>
+         <bottom>
+            <BorderPane prefHeight="30.0" prefWidth="30.0" BorderPane.alignment="CENTER">
+               <center>
+                  <Button fx:id="okButton" mnemonicParsing="false" onAction="#CloseWindow" onMouseClicked="#playClickSound" prefWidth="65.0" text="Ok" BorderPane.alignment="CENTER" />
+               </center>
+               <BorderPane.margin>
+                  <Insets bottom="5.0" />
+               </BorderPane.margin>
+            </BorderPane>
+         </bottom>
+      </BorderPane>
+   </children>
+</AnchorPane>

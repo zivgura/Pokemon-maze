@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane prefHeight="600.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="View.MyViewController">
+   <top>
+      <VBox BorderPane.alignment="CENTER">
+         <children>
+            <MenuBar fx:id="menuBar" prefHeight="32.0" prefWidth="600.0" VBox.vgrow="ALWAYS">
+               <menus>
+                  <Menu mnemonicParsing="false" text="File">
+                     <items>
+                        <MenuItem fx:id="newButton" mnemonicParsing="false" onAction="#ShowNew" text="New" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem fx:id="saveButton" disable="true" mnemonicParsing="false" text="Save" />
+                        <SeparatorMenuItem mnemonicParsing="false" />
+                        <MenuItem mnemonicParsing="false" onAction="#fileLoad" text="Load" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Options">
+                     <items>
+                        <MenuItem fx:id="propertiesButton" mnemonicParsing="false" onAction="#ShowProperties" text="Properties" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="About">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ShowAbout" text="About" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Help">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#ShowHelp" text="Help" />
+                     </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Exit">
+                     <items>
+                        <MenuItem mnemonicParsing="false" onAction="#Exit" text="Exit" />
+                     </items>
+                  </Menu>
+               </menus>
+            </MenuBar>
+         </children>
+      </VBox>
+   </top>
+   <left>
+      <BorderPane>
+         <left>
+            <BorderPane BorderPane.alignment="CENTER">
+               <bottom>
+                  <Button fx:id="muteButton" mnemonicParsing="false" onAction="#switchMusicState" BorderPane.alignment="CENTER" />
+               </bottom>
+               <BorderPane.margin>
+                  <Insets bottom="60.0" left="20.0" />
+               </BorderPane.margin>
+            </BorderPane>
+         </left>
+      </BorderPane>
+   </left>
+   <right>
+      <BorderPane BorderPane.alignment="CENTER">
+         <bottom>
+            <Button fx:id="startButton" alignment="BOTTOM_RIGHT" mnemonicParsing="false" onAction="#ShowNew" onMouseClicked="#playClickSound" text="New Game" textAlignment="CENTER" BorderPane.alignment="CENTER" />
+         </bottom>
+         <BorderPane.margin>
+            <Insets bottom="60.0" right="80.0" />
+         </BorderPane.margin>
+      </BorderPane>
+   </right>
+</BorderPane>
